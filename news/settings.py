@@ -75,6 +75,19 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'news.wsgi.application'
 
+SWAGGER_SETTINGS = {
+    'PERSIT_AUTH': True,
+    'SECURITY_DEFINITIONS':{
+        'Basic':{
+            'type': 'basic'
+        },
+        'Token': {
+            'type': 'apiKey',
+            'name': 'Authorization',
+            'in': 'header'
+        }
+    }
+}
 
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases

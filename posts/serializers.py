@@ -12,5 +12,9 @@ class PostSerializer(serializers.ModelSerializer):
     class Meta:
         model = Post
         fields = ['id', 'author_name', 'title', 'link', 'upvotes_amount', 'creation_date', 
-                  'comments', ]
-        read_only_fields = ['upvotes_amount', 'creation_date', ]
+                  'comments', 'rating', ]
+        read_only_fields = ['upvotes_amount', 'creation_date', 'rating', ]
+
+
+class RatingSerializer(serializers.Serializer):
+    value = serializers.IntegerField()
